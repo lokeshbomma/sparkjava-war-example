@@ -7,14 +7,14 @@ pipeline {
 	stage("Build") {
 		steps {
 		  echo "---------Build Started-----------"
-		  	sh 'mvn clean package Dmaven.test.skip=true'
+		  	sh 'mvn clean package -Dmaven.test.skip=true'
 		  echo "---------Build Ended-------------"
 		}
         }
 	stage("Test") {
                 steps {
                   echo "---------Test Started-----------"
-                        sh 'mvn sunfire-report:report'
+                        sh 'mvn surefire-report:report'
                   echo "---------Test Ended-------------"
                 }
         }
