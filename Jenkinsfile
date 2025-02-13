@@ -6,9 +6,19 @@ pipeline {
     stages {
 	stage("Build") {
 		steps {
-		  sh 'mvn clean package'
+		  echo "---------Build Started-----------"
+		  	sh 'mvn clean package Dmaven.test.skip=true'
+		  echo "---------Build Ended-------------"
 		}
         }
+	stage("Test") {
+                steps {
+                  echo "---------Test Started-----------"
+                        sh 'mvn sunfire-report:report'
+                  echo "---------Test Ended-------------"
+                }
+        }
+
         stage('SonarQube Analysis') {
                 environment {
                     scannerHome = tool 'saidemy-sonar-scanner'
