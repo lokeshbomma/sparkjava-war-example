@@ -1,19 +1,17 @@
 pipeline {
     agent any
     environment {
-        PATH= "/opt/maven/bin:$PATH"
+        PATH = "/opt/maven/bin:$PATH"
     }
     stages {
-        stage('Build') {
+        stage("Build") {
             steps {
-              
-                    sh 'mvn clean deploy'
-                
+                 sh 'mvn clean deploy'   
             }
         }
         stage('SonarQube Analysis') {
             environment{
-               scannerHome= tool 'SonarQube-Scanner'
+               scannerHome = tool 'SonarQube-Scanner'
             }
 
             steps {
