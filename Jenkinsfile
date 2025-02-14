@@ -40,7 +40,7 @@ pipeline {
                         "files": [
                           {
                               "pattern": "jarstaging/*.jar",
-                              "target": "lokesh-libs-release-local/{1}",
+                              "target": "lokesh-libs-release-local/",
                               "flat": "false",
                               "props": "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
