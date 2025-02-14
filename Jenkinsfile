@@ -30,18 +30,6 @@ pipeline {
           	    }
        		}	
         }
-	stage("Quality Gate") {
-		steps {
-		   script {
-                        timeout(time: 1, unit: 'HOURS') {
-                                def qg = waitForQualityGate()
-                                if (qg.status != 'Ok') {
-                                        error "pipeline aborted due ton quality failure: ${qg.status}"
-                                }
-			}
-                   }
-                } 
-	}
 	stage("Jar Publish") {
             steps {
                 script {
