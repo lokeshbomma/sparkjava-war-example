@@ -42,7 +42,7 @@ pipeline {
                               "pattern": "jarstaging/(*)",
                               "target": "lokesh-libs-release-local/{1}",
                               "flat": "false",
-                              "props": $"{properties}"
+                              "props": "${properties}"
                               "exclusions": [ "*.shal", "*.md5"]
                           }
                         ]
