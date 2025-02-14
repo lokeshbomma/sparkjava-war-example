@@ -48,9 +48,9 @@ pipeline {
                         ]
                     }"""
                     def buildInfo = server.upload(uploadSpec)
-                    uploadSpec.env.collect()
+                    buildInfo.env.collect()
                     server.publishBuildInfo(buildInfo)
-                    echo "------JarPublish Ended--------"
+                    echo '------JarPublish Ended--------'
                 }
                 
             }
