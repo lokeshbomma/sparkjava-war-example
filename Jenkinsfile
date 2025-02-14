@@ -43,7 +43,7 @@ pipeline {
                               "target": "lokesh-libs-release-local/{1}",
                               "flat": "false",
                               "props": "${properties}",
-                              "exclusions": [ "*.shal", "*.md5"]
+                              "exclusions": [ "*.sha1", "*.md5"]
                           }
                         ]
                     }"""
